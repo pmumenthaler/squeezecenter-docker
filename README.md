@@ -16,13 +16,13 @@ docker volume create --driver local --opt type=nfs --opt o=addr=x.x.x.x,rw --opt
 
  docker run -d \
            -v music:/music \
-           -v squeeze_data:/var/lib/squeezeboxserver \ 
-           -v /etc/localtime:/etc/localtime:ro  \
+           -v squeeze_data:/var/lib/squeezeboxserver \
+           -v /etc/localtime:/etc/localtime:ro \
            -p 9000:9000 \
-           -p 3483:3483 \ 
-           -p 3483:3483/udp \ 
+           -p 3483:3483 \
+           -p 3483:3483/udp \
            -p 9090:9090 \
-           -p 9005:9005 \ 
+           -p 9005:9005 \
            pmumenthaler/squeezecenter
 
 
