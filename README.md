@@ -14,7 +14,7 @@ docker volume create --driver local --opt type=nfs --opt o=addr=x.x.x.x,rw --opt
 
 ### run the container
 
-docker run -d \
+ docker run -d \
            -v music:/music \
            -v squeeze_data:/var/lib/squeezeboxserver \ 
            -v /etc/localtime:/etc/localtime:ro  \
