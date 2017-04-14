@@ -1,5 +1,9 @@
 # squeezecenter-docker
 
+Run Logitech Media Server as Docker image. 
+
+Package sources you find here: http://downloads.slimdevices.com/
+
 
 ## inititalize volumes (nfs here):
 
