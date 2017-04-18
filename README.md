@@ -10,7 +10,7 @@ Package sources you find here: http://downloads.slimdevices.com/
 ### volume with the music files 
 docker volume create --driver local --opt type=nfs --opt o=addr=x.x.x.x,ro --opt device=:/share/music music
 
-### volume with squeecenter data
+### volume with squeezecenter data
 
 with nfs you need to take care to have the squeezebox user with the same gid on the nfs server as in the Dockerfile
 
