@@ -14,12 +14,13 @@ ENV LANG=en_US.UTF-8 \
     SQUEEZEBOX_CHARSET="utf8" \ 
     SQUEEZEBOX_ARGS="--daemon --prefsdir=$SQUEEZEBOX_CFG_DIR --logdir=$SQUEEZEBOX_LOG_DIR --cachedir=$SQUEEZEBOX_CACHE_DIR --charset=$SQUEEZEBOX_CHARSET --user=$SQUEEZEBOX_USER"
 # fix permissions after installation
-RUN touch /var/log/squeezeboxserver/perfmon.log && \ 
-touch /var/log/squeezeboxserver/server.log && \ 
-touch /var/log/squeezeboxserver/spotifyd.log
+#RUN touch /var/log/squeezeboxserver/perfmon.log && \ 
+#touch /var/log/squeezeboxserver/server.log && \ 
+#touch /var/log/squeezeboxserver/spotifyd.log
 RUN chgrp -R 0  /var/log/squeezeboxserver && \ 
+chmod -R g=u  /var/log/squeezeboxserver 
+RUN chgrp -R 0  /var/lib/squeezeboxserver && \ 
 chmod -R g=u  /var/lib/squeezeboxserver && \ 
-chmod -R g+w  /var/lib/squeezeboxserver
 EXPOSE 3483 3483/udp 9000 9090
 USER 1001
 ENTRYPOINT ["perl","/usr/libexec/squeezeboxserver" ,"$SQUEEZEBOX_ARGS"]
