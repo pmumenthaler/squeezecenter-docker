@@ -5,7 +5,7 @@ RUN curl -Lsf -o /tmp/logitechmediaserver.noarch.rpm http://downloads.slimdevice
 RUN useradd -u 1001 squeezeboxserver
 #housekeeping
 RUN yum install -y /tmp/logitechmediaserver.noarch.rpm && rm -f /tmp/logitechmediaserver.noarch.rpm
-RUN yum install -y perl-CGI.noarch perl-Digest-MD5.x86_64 && yum clean all
+RUN yum install -y perl-CGI.noarch perl-Digest-MD5.x86_64 && yum clean all -y
 RUN ln -s /usr/lib/perl5/vendor_perl/Slim /usr/lib64/perl5/Slim
 ENV LANG=en_US.UTF-8 \
     SQUEEZEBOX_USER="squeezeboxserver" \ 
