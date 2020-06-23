@@ -19,8 +19,8 @@ ENV LANG=en_US.UTF-8 \
 RUN touch /var/log/squeezeboxserver/perfmon.log && \ 
 touch /var/log/squeezeboxserver/server.log && \ 
 touch /var/log/squeezeboxserver/spotifyd.log
-RUN chown -R 0  /var/log/squeezeboxserver && \ 
-chown -R g=u  /var/lib/squeezeboxserver
+RUN chgrp -R 0  /var/log/squeezeboxserver && \ 
+chmod -R g=u  /var/lib/squeezeboxserver
 USER 1001
 EXPOSE 3483 3483/udp 9000 9090
 ENTRYPOINT ["perl","/usr/libexec/squeezeboxserver" ,"$SQUEEZEBOX_ARGS"]
