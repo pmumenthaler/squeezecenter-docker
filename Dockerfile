@@ -21,7 +21,7 @@ chmod -R g=u  /var/log/squeezeboxserver
 RUN chgrp -R 0  /var/lib/squeezeboxserver && \ 
 chmod -R g=u  /var/lib/squeezeboxserver
 EXPOSE 3483 3483/udp 9000 9090
-USER 1032
+USER 1001
 ENTRYPOINT ["perl","/usr/libexec/squeezeboxserver" ,"$SQUEEZEBOX_ARGS"]
 
 
