@@ -1,7 +1,7 @@
 FROM centos:7
 MAINTAINER "Peter Mumenthaler" <pmumenthaler@gmail.com>
 RUN curl -Lsf -o /tmp/logitechmediaserver.noarch.rpm http://downloads.slimdevices.com/LogitechMediaServer_v7.9.2/logitechmediaserver-7.9.2-1.noarch.rpm
-RUN useradd -u 1001 squeezeboxserver
+RUN useradd -u 1032 squeezeboxserver
 RUN yum install -y /tmp/logitechmediaserver.noarch.rpm && rm -f /tmp/logitechmediaserver.noarch.rpm
 RUN yum install -y perl-CGI.noarch perl-Digest-MD5.x86_64 && yum clean all -y
 RUN ln -s /usr/lib/perl5/vendor_perl/Slim /usr/lib64/perl5/Slim 
@@ -22,7 +22,7 @@ chmod -R g=u  /var/log/squeezeboxserver
 RUN chgrp -R 0  /var/lib/squeezeboxserver && \ 
 chmod -R g=u  /var/lib/squeezeboxserver
 EXPOSE 3483 3483/udp 9000 9090
-USER 1001
+USER 1032
 ENTRYPOINT ["perl","/usr/libexec/squeezeboxserver" ,"$SQUEEZEBOX_ARGS"]
 
 
