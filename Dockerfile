@@ -19,7 +19,7 @@ ENV LANG=en_US.UTF-8 \
 #touch /var/log/squeezeboxserver/spotifyd.log
 RUN chgrp -R 0  /var/log/squeezeboxserver && \ 
 chmod -R g=u  /var/log/squeezeboxserver && \
-mkdir /var/cache && \ 
+mkdir -p /var/cache && \ 
 chgrp -R 0  /var/cache && \ 
 chmod -R g=u  /var/cache
 EXPOSE 3483 3483/udp 9000 9090
