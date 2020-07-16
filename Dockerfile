@@ -1,6 +1,6 @@
 FROM centos:7
 MAINTAINER "Peter Mumenthaler" <pmumenthaler@gmail.com>
-RUN curl -Lsf -o /tmp/logitechmediaserver.noarch.rpm http://downloads.slimdevices.com/LogitechMediaServer_v7.9.0/logitechmediaserver-7.9.0-1.noarch.rpm
+RUN curl -Lsf -o /tmp/logitechmediaserver.noarch.rpm http://downloads.slimdevices.com/LogitechMediaServer_v7.9.2/logitechmediaserver-7.9.2-1.noarch.rpm
 #housekeeping
 RUN yum install -y /tmp/logitechmediaserver.noarch.rpm && rm -f /tmp/logitechmediaserver.noarch.rpm
 RUN yum install -y perl-CGI.noarch perl-Digest-MD5.x86_64 && yum clean all -y
